@@ -13,32 +13,32 @@ def enter_number():
 
 
 def name_in_phonebook(f):
-    def check(contact_name, contact_number, dct):
-        if contact_name in dct:
-            yes_no = input(f"Name '{contact_name}' exist in PhoneBook\n\
+    def check(name, number, dct):
+        if name in dct:
+            yes_no = input(f"Name '{name}' exist in PhoneBook\n\
 would you like to change the number?(y/n)\n")
             if yes_no.upper() == 'Y':
-                dct[contact_name] = contact_number
-        f(contact_name, contact_number, dct)
+                dct[name] = number
+        f(name, number, dct)
     return check
 
 
 @name_in_phonebook
-def create_contact(contact_name, contact_number, dct):
-    dct[contact_name] = contact_number
-    print(f"{contact_name} - {contact_number} saved\n")
+def create_contact(name, number, dct):
+    dct[name] = number
+    print(f"{name} - {number} saved\n")
 
 
-def read_contact(contact_name, dct):
-    print(f"{contact_name}: {dct[contact_name]}\n")
+def read_contact(name, dct):
+    print(f"{name}: {dct[name]}\n")
 
 
-def update_contact(contact_name, dct):
-    contact_number = enter_number()
-    dct[contact_name] = contact_number
-    print(f"{contact_name} - {contact_number} saved\n")
+def update_contact(name, dct):
+    number = enter_number()
+    dct[name] = number
+    print(f"{name} - {number} saved\n")
 
 
-def delete_contact(contact_name, dct):
-    del dct[contact_name]
-    print(f"Name '{contact_name}' deleted\n")
+def delete_contact(name, dct):
+    del dct[name]
+    print(f"Name '{name}' deleted\n")
