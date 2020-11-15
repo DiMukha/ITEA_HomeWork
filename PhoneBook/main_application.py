@@ -1,6 +1,5 @@
 from ITEA_HomeWork.PhoneBook.file_app import config
-from ITEA_HomeWork.PhoneBook.functions import print_start_text, enter_number, enter_name, read_contact,\
-    delete_contact, update_contact, create_contact
+from ITEA_HomeWork.PhoneBook.functions import print_start_text, enter_number, enter_name, PhoneBook
 from ITEA_HomeWork.PhoneBook.messages import GREETINGS, OPTIONS
 
 
@@ -16,12 +15,12 @@ elif file_format == 'csv':
 
 load, save = file_work.load, file_work.save
 
-phone_book = load()
+phone_book = PhoneBook(load())
 
 functions = {
-    'R': read_contact,
-    'D': delete_contact,
-    'U': update_contact,
+    'R': phone_book.read,
+    'D': phone_book.delete,
+    'U': phone_book.update,
 }
 
 choose_menu = f'{GREETINGS}{OPTIONS}'
@@ -31,15 +30,15 @@ while True:
     choose_menu = OPTIONS
 
     if menu not in ['C', 'R', 'U', 'D']:
-        save(phone_book)
+        save(phone_book.data)
         break
 
     name = enter_name()
     if menu == 'C':
         number = enter_number()
-        create_contact(name, number, phone_book)
+        phone_book.create(name, number)
         continue
     try:
-        functions.get(menu)(name, phone_book)
+        functions.get(menu)(name)
     except KeyError:
         print(f"Name '{name}' not found\n")
