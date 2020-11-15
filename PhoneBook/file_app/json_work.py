@@ -1,7 +1,7 @@
 import json
 
 
-def load_json():
+def load():
     try:
         with open(f'data.json', 'rt') as f:
             data = json.load(f)
@@ -10,6 +10,6 @@ def load_json():
     return data
 
 
-def save_json(data):
+def save(data):
     with open(f'data.json', 'wt') as f:
         json.dump(data, f)

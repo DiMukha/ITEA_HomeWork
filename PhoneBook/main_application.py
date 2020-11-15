@@ -1,16 +1,20 @@
-from ITEA_HomeWork.PhoneBook.file_app import config, json_work, pickle_work
+from ITEA_HomeWork.PhoneBook.file_app import config
 from ITEA_HomeWork.PhoneBook.functions import print_start_text, enter_number, enter_name, read_contact,\
     delete_contact, update_contact, create_contact
 from ITEA_HomeWork.PhoneBook.messages import GREETINGS, OPTIONS
 
 
-config.create_config(format='pickle')
+config.create_config(format='csv')
 file_format = config.read_config()
 
 if file_format == 'json':
-    load, save = json_work.load_json, json_work.save_json
+    from ITEA_HomeWork.PhoneBook.file_app import json_work as file_work
 elif file_format == 'pickle':
-    load, save = pickle_work.load_pickle, pickle_work.save_pickle
+    from ITEA_HomeWork.PhoneBook.file_app import pickle_work as file_work
+elif file_format == 'csv':
+    from ITEA_HomeWork.PhoneBook.file_app import csv_work as file_work
+
+load, save = file_work.load, file_work.save
 
 phone_book = load()
 
