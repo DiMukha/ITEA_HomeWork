@@ -2,3 +2,4 @@
 __pycache__
 PhoneBook/__pycache__
 PhoneBook/file_app/__pycache__
+*.pyc
