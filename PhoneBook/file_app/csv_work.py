@@ -3,7 +3,7 @@ from ITEA_HomeWork.PhoneBook.functions import PhoneBook
 
 
 def load():
-    attributes = PhoneBook.attributes
+    attributes = PhoneBook.FIELDS
     data = {}
     try:
         with open(f'data.csv', 'r') as f:

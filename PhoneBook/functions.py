@@ -1,5 +1,5 @@
 class PhoneBook:
-    attributes = ['name', 'phone', 'email']
+    FIELDS = ['name', 'phone', 'email']
 
     def __init__(self, data):
         self.data = data

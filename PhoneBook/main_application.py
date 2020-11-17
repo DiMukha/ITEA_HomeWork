@@ -26,7 +26,6 @@ functions = {
 choose_menu = f'{GREETINGS}{OPTIONS}'
 
 while True:
-    print(phone_book.data)
     menu = print_start_text(choose_menu)
     choose_menu = OPTIONS
 
