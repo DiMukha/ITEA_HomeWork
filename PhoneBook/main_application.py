@@ -1,5 +1,5 @@
 from ITEA_HomeWork.PhoneBook.file_app import config
-from ITEA_HomeWork.PhoneBook.functions import print_start_text, enter_number, enter_name, PhoneBook
+from ITEA_HomeWork.PhoneBook.functions import print_start_text, enter_phone, enter_name, enter_email, PhoneBook
 from ITEA_HomeWork.PhoneBook.messages import GREETINGS, OPTIONS
 
 
@@ -26,6 +26,7 @@ functions = {
 choose_menu = f'{GREETINGS}{OPTIONS}'
 
 while True:
+    print(phone_book.data)
     menu = print_start_text(choose_menu)
     choose_menu = OPTIONS
 
@@ -35,8 +36,9 @@ while True:
 
     name = enter_name()
     if menu == 'C':
-        number = enter_number()
-        phone_book.create(name, number)
+        phone = enter_phone()
+        email = enter_email()
+        phone_book.create(name, phone=phone, email=email)
         continue
     try:
         functions.get(menu)(name)

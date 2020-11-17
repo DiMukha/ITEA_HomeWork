@@ -1,23 +1,30 @@
 class PhoneBook:
+    attributes = ['name', 'phone', 'email']
 
     def __init__(self, data):
         self.data = data
 
+    def create(self, name, **attributes):
+        self.data[name] = {key: value for key, value in attributes.items()}
+        print(f"{name} saved\n")
+
     def read(self, name):
-        print(f"{name}: {self.data[name]}\n")
+        print(f"{name}:")
+        for attribute in self.data[name]:
+            print(f"\t{attribute} - {self.data[name][attribute]}")
+        print("\n")
 
     def update(self, name):
-        number = input("Enter Name: ")
-        self.data[name] = number
-        print(f"{name} - {number} saved\n")
+        phone = enter_phone()
+        email = enter_email()
+        self.data[name]['phone'] = phone
+        self.data[name]['email'] = email
+        print(f"{name} saved\n")
 
     def delete(self, name):
         del self.data[name]
         print(f"Name '{name}' deleted\n")
 
-    def create(self, name, number):
-        self.data[name] = number
-        print(f"{name} - {number} saved\n")
 
 
 def print_start_text(*messages):
@@ -30,8 +37,12 @@ def enter_name():
     return input("Enter Name: ")
 
 
-def enter_number():
+def enter_phone():
     return input("Enter Number: ")
+
+
+def enter_email():
+    return input("Enter e-Mail: ")
 
 
 # def name_in_phonebook(f):
