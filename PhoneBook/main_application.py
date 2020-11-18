@@ -6,8 +6,8 @@ phone_book = PhoneBook(load())
 functions = {
     'C': phone_book.create,
     'R': phone_book.read,
-    'D': phone_book.delete,
     'U': phone_book.update,
+    'D': phone_book.delete,
 }
 
 choose_menu = f'{phone_book.GREETINGS}{phone_book.OPTIONS}'

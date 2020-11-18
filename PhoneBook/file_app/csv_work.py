@@ -9,7 +9,7 @@ def load():
         with open(f'data.csv', 'r') as f:
             reader = csv.reader(f)
             for rows in reader:
-                data[rows[0]] = {fields[r]: rows[r+1] for r in range(len(fields))}
+                data[rows[0]] = {fields[r]: rows[r+1] for r in range(len(rows)-1)}
     except FileNotFoundError:
         return data
     return data

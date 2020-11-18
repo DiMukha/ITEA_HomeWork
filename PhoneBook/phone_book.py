@@ -14,8 +14,7 @@ class PhoneBook(InputOutput):
             yes_no = self.input_item('Y/N')
             if yes_no.upper() == 'N':
                 return
-        fields = {field: self.input_item(field) for field in self.FIELDS}
-        self.data[name] = fields
+        self.data[name] = {field: self.input_item(field) for field in self.FIELDS}
         self.output_message(self.SAVE)
 
     def read(self):
@@ -25,8 +24,7 @@ class PhoneBook(InputOutput):
 
     def update(self):
         name = self.input_item(self.CONTACT_NAME)
-        fields = {field: self.input_item(field) for field in self.FIELDS}
-        self.data[name] = fields
+        self.data[name] = {field: self.input_item(field) for field in self.FIELDS}
         self.output_message(self.SAVE)
 
     def delete(self):

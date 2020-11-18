@@ -3,3 +3,4 @@ __pycache__
 PhoneBook/__pycache__
 PhoneBook/file_app/__pycache__
 *.pyc
+PhoneBook/file_app/__pycache__/csv_work.cpython-38.pyc
