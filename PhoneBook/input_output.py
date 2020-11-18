@@ -1,6 +1,6 @@
 class InputOutput:
     GREETINGS = "Hi! I`m your PhoneBook\n"
-    OPTIONS = """Select option:
+    MENU = """Select option:
 'C'-to create
 'R'-to read
 'U'-to update
