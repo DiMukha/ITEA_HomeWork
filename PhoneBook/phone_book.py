@@ -1,5 +1,6 @@
 from ITEA_HomeWork.PhoneBook.comunication import InputOutput
 
+
 class PhoneBook(InputOutput):
     CONTACT_NAME = 'name'
     FIELDS = ['phone', 'email']
@@ -31,3 +32,10 @@ class PhoneBook(InputOutput):
         name = self.input_item(self.CONTACT_NAME)
         del self.data[name]
         self.output_message(self.DELETE)
+
+    def get_action(self, action):
+        menu = {'C': self.create,
+                'R': self.read,
+                'U': self.update,
+                'D': self.delete}
+        menu.get(action)()
