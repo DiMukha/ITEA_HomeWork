@@ -1,18 +1,17 @@
 import csv
-from ITEA_HomeWork.PhoneBook.functions import PhoneBook
+from ITEA_HomeWork.PhoneBook.phone_book import PhoneBook
 
 
 def load():
-    attributes = PhoneBook.FIELDS
+    fields = PhoneBook.FIELDS
     data = {}
     try:
         with open(f'data.csv', 'r') as f:
             reader = csv.reader(f)
             for rows in reader:
-                name_attribute = {attributes[i+1]: rows[i+1] for i in range(len(attributes[1:]))}
-                data[rows[0]] = name_attribute
+                data[rows[0]] = {fields[r]: rows[r+1] for r in range(len(fields))}
     except FileNotFoundError:
-        data = {}
+        return data
     return data
 
 
