@@ -1,7 +1,7 @@
 from ITEA_HomeWork.PhoneBook.file_app import config
 
 
-config.create_config(format='json')
+config.create_config(format='csv')
 file_format = config.read_config()
 
 if file_format == 'json':
