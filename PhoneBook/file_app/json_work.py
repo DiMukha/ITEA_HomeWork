@@ -12,4 +12,4 @@ def load():
 
 def save(data):
     with open(f'data.json', 'wt') as f:
-        json.dump(data, f)
+        json.dump(data.__dict__['_d'], f)

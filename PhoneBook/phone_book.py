@@ -3,7 +3,7 @@ from ITEA_HomeWork.PhoneBook.input_output import InputOutput
 
 class PhoneBook(InputOutput):
     CONTACT_NAME = 'name'
-    FIELDS = ['phone', 'email', 'address']
+    FIELDS = ['phone', 'email']
     ACTIONS = ['C', 'R', 'U', 'D']
 
     def __init__(self, data):
