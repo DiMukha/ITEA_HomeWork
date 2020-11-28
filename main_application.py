@@ -1,6 +1,6 @@
-from ITEA_HomeWork.PhoneBook.settings import load, save
-from ITEA_HomeWork.PhoneBook.phone_book import PhoneBook
-from ITEA_HomeWork.PhoneBook.interface_collection import PhoneBookDictionary
+from PhoneBook.settings import load, save
+from PhoneBook.phone_book import PhoneBook
+from PhoneBook.interface_collection import PhoneBookDictionary
 
 data = PhoneBookDictionary(load())
 

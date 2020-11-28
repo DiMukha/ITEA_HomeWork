@@ -1,4 +1,4 @@
-from ITEA_HomeWork.PhoneBook.input_output import InputOutput
+from PhoneBook.input_output import InputOutput
 
 
 class PhoneBook(InputOutput):

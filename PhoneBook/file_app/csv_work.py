@@ -1,5 +1,5 @@
 import csv
-from ITEA_HomeWork.PhoneBook.phone_book import PhoneBook
+from PhoneBook.phone_book import PhoneBook
 
 
 def load():
