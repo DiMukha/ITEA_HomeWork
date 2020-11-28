@@ -4,3 +4,8 @@ PhoneBook/__pycache__
 PhoneBook/file_app/__pycache__
 *.pyc
 PhoneBook/file_app/__pycache__/csv_work.cpython-38.pyc
+.idea/workspace.xml
+PhoneBook/data.csv
+PhoneBook/data.csv
+PhoneBook/data.csv
+PhoneBook/file_app/__pycache__/csv_work.cpython-38.pyc
