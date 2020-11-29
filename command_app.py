@@ -13,4 +13,6 @@ parser.add_argument('-c', action='store', dest='contact', nargs='+',
                     help='Create contact')
 args = parser.parse_args()
 name, phone, email = args.contact
-print(name, phone, email)
+
+phone_book.data[name] = {'phone': phone, 'email': email}
+save(phone_book.data)
