@@ -2,6 +2,7 @@ from PhoneBook.settings import load, save
 from PhoneBook.phone_book import PhoneBook
 from PhoneBook.interface_collection import PhoneBookDictionary
 
+
 data = PhoneBookDictionary(load())
 
 phone_book = PhoneBook(data)
